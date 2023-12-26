@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthodrome Map</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Orthodrome Map Generator</h1>
+
+    <form method="POST" action="/">
+        {{ form.hidden_tag() }}
+        <label for="lat1">Latitude for Point 1:</label>
+        {{ form.lat1() }}
+        <label for="lon1">Longitude for Point 1:</label>
+        {{ form.lon1() }}
+        <br>
+        <label for="lat2">Latitude for Point 2:</label>
+        {{ form.lat2() }}
+        <label for="lon2">Longitude for Point 2:</label>
+        {{ form.lon2() }}
+        <br><br>
+        {{ form.submit() }}
+    </form>
+
+    {% if map_created %}
+        <iframe src="{{ map_file_path }}" width="100%" height="600"></iframe>
+    {% endif %}
+</body>
+</html>

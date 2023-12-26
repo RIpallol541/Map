@@ -1,0 +1,4 @@
+Flask==2.0.1
+folium==0.12.1
+pyproj==3.2.1
+geopy==2.2.0
